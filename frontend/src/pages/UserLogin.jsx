@@ -4,21 +4,63 @@ import "./UserLogin.css";
 
 function UserLogin() {
   const navigate = useNavigate();
-  const [error, setError] = useState("");
 
-  const handleLogin = (e) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  // Handle login
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
-    if (!email || !password) {
+    if (!formData.email || !formData.password) {
       setError("Please enter both email and password.");
       return;
     }
 
-    // For now, simple login success
-    navigate("/user-home");
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch(
+        "https://get-help.onrender.com/login-user",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Save userId in localStorage
+        localStorage.setItem("userId", data.userId);
+
+        navigate("/user-home");
+      } else {
+        setError(data.message || "Login failed");
+      }
+
+    } catch (err) {
+      setError("Server Error");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -32,18 +74,22 @@ function UserLogin() {
             type="email"
             name="email"
             placeholder="Email Address"
+            onChange={handleChange}
+            required
           />
 
           <input
             type="password"
             name="password"
             placeholder="Password"
+            onChange={handleChange}
+            required
           />
 
           {error && <p className="error-text">{error}</p>}
 
           <button type="submit" className="login-btn">
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 

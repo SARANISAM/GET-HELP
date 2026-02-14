@@ -4,11 +4,69 @@ import "./WorkerSignup.css";
 
 function WorkerSignup() {
   const navigate = useNavigate();
-  const [registered, setRegistered] = useState(false);
 
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    address: "",
+    phone: "",
+    profession: "",
+    locality: ""
+  });
+
+  const [message, setMessage] = useState("");
+  const [registered, setRegistered] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  // Handle submit
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setRegistered(true);
+
+    if (!formData.name || !formData.email || !formData.password || !formData.profession) {
+      setMessage("Please fill required fields");
+      return;
+    }
+
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("https://get-help.onrender.com/signup-worker", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setRegistered(true);
+        setMessage("Registration Successful!");
+
+        setTimeout(() => {
+          navigate("/login-worker");
+        }, 1500);
+
+      } else {
+        setMessage(data.message || "Signup Failed");
+      }
+
+    } catch (err) {
+      setMessage("Server Error");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -22,30 +80,72 @@ function WorkerSignup() {
           </p>
 
           <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Worker ID" required />
-            <input type="text" placeholder="Full Name" required />
-            <input type="email" placeholder="Email Address" required />
-            <input type="text" placeholder="Phone Number" required />
-            <input type="text" placeholder="Address" required />
-            <input type="text" placeholder="Profession" required />
-            <input type="text" placeholder="Locality" required />
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number"
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              name="address"
+              placeholder="Address"
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              name="profession"
+              placeholder="Profession (Plumber)"
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="text"
+              name="locality"
+              placeholder="Locality"
+              onChange={handleChange}
+            />
 
             <button type="submit" className="worker-btn">
-              Register as Worker
+              {loading ? "Registering..." : "Register as Worker"}
             </button>
+
           </form>
+
+          {message && <p className="worker-message">{message}</p>}
         </div>
       ) : (
         <div className="worker-success">
           <h2>✅ Registration Successful!</h2>
-          <p>Your worker account has been created.</p>
-
-          <button
-            className="home-btn"
-            onClick={() => navigate("/")}
-          >
-            Go To Home Page
-          </button>
+          <p>Redirecting to Worker Login...</p>
         </div>
       )}
 
