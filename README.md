@@ -14,7 +14,7 @@ HASH
 - Alphonse Maria Martin – RIT
 
 ### Hosted Project Link
-https://your-gethelp-link.vercel.app
+https://get-help-gilt.vercel.app/
 
 ---
 
