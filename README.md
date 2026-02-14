@@ -72,3 +72,157 @@ GetHelp provides a simple and fast platform where users can search services base
 ### Installation
 ```bash
 npm install
+#### Run
+```bash
+[Run commands - e.g., npm start, python app.py]
+```npm start
+
+
+## Project Documentation
+
+### For Software:
+
+#### Screenshots 
+
+![](workers login)
+*GETHELP login page showing separate options for User Login and Worker Login with signup links.*
+
+![Screenshot2](users dashboard)
+*User dashboard displaying service search bar, locality filter, worker list, and integrated map view to locate nearby workers.*
+
+![Screenshot3](workers dashboard)
+*Worker dashboard showing worker profile details along with real-time Online/Offline availability toggle.*
+
+#### Diagrams
+
+**System Architecture:**
+
+![Architecture Diagram](docs/architecture.png)
+
+
+**Application Workflow:**
+
+
+---
+
+
+#### Build Photos
+
+![hash]()
+
+
+
+---
+
+## Additional Documentation
+
+### For Web Projects with Backend:
+
+#### API Documentation
+
+**Base URL:** m`
+
+##### Endpoints
+
+**GET /api/endpoint**
+- **Description:** [What it does]
+- **Parameters:**
+  - `param1` (string): [Description]
+  - `param2` (integer): [Description]
+- **Response:**
+```json
+{
+  "status": "success",
+  "data": {}
+}
+```
+
+**POST /api/endpoint**
+- **Description:** [What it does]
+- **Request Body:**
+```json
+{
+  "field1": "value1",
+  "field2": "value2"
+}
+```
+- **Response:**
+```json
+{
+  "status": "success",
+  "message": "Operation completed"
+}
+```
+
+[Add more endpoints as needed...]
+
+---
+
+
+POST /login-user
+
+POST /login-worker
+
+POST /register-user
+
+POST /register-worker
+
+GET /workers
+
+GET /worker/:id
+
+POST /toggle-availability
+
+GET /services
+
+POST /services
+
+GET /user/:id
+
+PUT /user/:id
+
+PUT /worker/:id
+
+DELETE /worker/:id
+
+
+
+
+
+## Project Demo
+
+### Video
+[]
+
+*Explain what the video demonstrates - key features, user flow, technical highlights*
+
+---
+
+## AI Tools Used 
+
+
+
+**Tool Used:** [ ChatGPT, Gemini]
+
+**Purpose:** [prompting and designing]
+- 
+
+
+## Team Contributions
+
+- [alphonse maria martin]: [Frontend development, API integration]
+- [sara nisam]: [SpeBackend development, Database design]
+
+---
+
+## License
+
+This project is licensed under the  MIT License
+
+
+
+
+
+---
+
+Made with ❤️ at TinkerHub
