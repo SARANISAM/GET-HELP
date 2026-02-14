@@ -11,8 +11,8 @@ Sara Nisam – RIT
 
 Alphonse Maria Martin – RIT
 
-Hosted Project Link:
-Add your deployed project URL here
+Hosted Project Link:https://get-help-gilt.vercel.app/
+
 
 Project Description
 
@@ -95,11 +95,16 @@ GETHELP – Connecting Communities with Trusted Local Services, Instantly. 🚀
 Project Documentation
 For Software:
 Screenshots 
-![Screenshot1](Add screenshot 1 here with proper name) Add caption explaining what this shows
+![](workers dashboard) 
+The Worker Dashboard is built for control and visibility. Once a worker logs in, they are redirected to a personalized dashboard where they can manage their professional presence.
 
-![Screenshot2](Add screenshot 2 here with proper name) Add caption explaining what this shows
 
-![Screenshot3](Add screenshot 3 here with proper name) Add caption explaining what this shows
+![](worker login) 
+The Worker Login Page is a simple and secure authentication screen designed for quick access.
+
+![]user dashboard)
+The User Dashboard in GetHelp is designed to help users quickly find nearby service workers in a simple and intuitive way. After logging in, users are taken to a clean home page that focuses mainly on search and discovery.
+
 
 Diagrams
 System Architecture:
@@ -107,13 +112,13 @@ System Architecture:
 Architecture Diagram Explain your system architecture - components, data flow, tech stack interaction
 
 
-"C:\Users\saran\Downloads\ChatGPT Image Feb 14, 2026, 08_06_39 AM.png"
+
 
 
 Build Photos
 !HASH
 
-![WhatsApp Image 2026-02-14 at 7 27 53 AM](https://github.com/user-attachments/assets/23bb997c-5ed8-486a-a828-9672bb7a905b)
+
 
 
 For Web Project with Backend
@@ -122,12 +127,83 @@ API Documentation
 Base URL:
 
 https://cxifrmpzhudgqifmzhgp.supabase.co
+ENDPOINTS
 API
 openstreetmap api
 
+
 Project Demo
 Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+[.]
+Overall Demo Description – GetHelp Web Application
+
+GetHelp is a locality-based service web application designed to connect users with nearby skilled workers such as electricians, plumbers, carpenters, and technicians. The platform focuses on speed, simplicity, and real-time availability, making it easy for people in neighborhoods and semi-urban areas to quickly find trusted help.
+
+The demo begins with the main landing page, where the user is presented with two clear options: User Login or Worker Login. From here, the application branches into two different experiences depending on the role selected.
+
+Vocal Login Page (Common Entry)
+
+The Vocal Login page is a simple and clean authentication screen that contains:
+
+Email field
+
+Password field
+
+Login button
+
+Signup options for User and Worker
+
+It performs basic email and password verification, ensuring secure and quick access. This page acts as the gateway to both dashboards.
+
+User Dashboard Description
+
+Once a user logs in, they are redirected to the User Home Dashboard.
+
+Key elements shown in the demo:
+
+Search Bar – Users can type a service such as “Plumber” or “Electrician.”
+
+Locality Filter – Helps narrow results to nearby workers.
+
+Service Category Selection – Quick buttons for common services.
+
+Map View – Displays worker locations visually so the user can pick the closest one.
+
+Worker Details Panel – Shows name, profession, contact, and availability status.
+
+The user dashboard emphasizes ease of discovery — find, view, and contact workers within seconds.
+
+Worker Dashboard Description
+
+After a worker logs in, they are taken to the Worker Dashboard, which is more profile-centric and control-based.
+
+Key highlights in the demo:
+
+Profile Section – Shows worker name, profession, contact info, and locality.
+
+Online / Offline Toggle Button – A unique real-time availability switch that lets workers instantly appear or disappear from user search results.
+
+Job Visibility / Status Area – Helps workers monitor requests or visibility.
+
+Last Seen / Activity Indicator – Shows whether the worker is recently active.
+
+The worker dashboard focuses on control and visibility, allowing workers to manage their availability globally with a single click.
+
+Flow & Architecture Explanation in Demo
+
+The demo video then briefly explains the workflow architecture:
+
+GetHelp Landing Page
+
+Choose User Login or Worker Login
+
+Signup if new → Return to Login
+
+User Path: Login → User Home → Search Services → View Map → Contact Worker
+
+Worker Path: Login → Worker Dashboard → Toggle Online/Offline → Manage Profile
+
+This structured flow demonstrates how both user and worker journeys are simple, direct, and role-specific, ensuring smooth interaction and fast service matching.
 
 
 
@@ -170,13 +246,6 @@ License
 
 This project is licensed under the MIT License – see the LICENSE file for details.
 
-Common License Options
-
-MIT License – Permissive and widely used
-
-Apache 2.0 – Permissive with patent protection
-
-GPL v3 – Copyleft, requires derivative works to remain open-source
 
 Made with ❤️ at TinkerHub 🚀
 
