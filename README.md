@@ -84,13 +84,13 @@ npm install
 
 #### Screenshots 
 
-![](workers login)
+![https://drive.google.com/drive/folders/1r967nBOv-MIP_fFrPZODD-REqrNV07h0?usp=sharing](workers login)
 *GETHELP login page showing separate options for User Login and Worker Login with signup links.*
 
-![Screenshot2](users dashboard)
+![https://drive.google.com/drive/folders/1r967nBOv-MIP_fFrPZODD-REqrNV07h0?usp=sharing](users dashboard)
 *User dashboard displaying service search bar, locality filter, worker list, and integrated map view to locate nearby workers.*
 
-![Screenshot3](workers dashboard)
+![https://drive.google.com/drive/folders/1r967nBOv-MIP_fFrPZODD-REqrNV07h0?usp=sharing](workers dashboard)
 *Worker dashboard showing worker profile details along with real-time Online/Offline availability toggle.*
 
 #### Diagrams
@@ -99,7 +99,7 @@ npm install
 
 ![Architecture Diagram](docs/architecture.png)
 
-
+https://drive.google.com/drive/folders/1r967nBOv-MIP_fFrPZODD-REqrNV07h0?usp=sharing
 **Application Workflow:**
 
 
@@ -108,7 +108,7 @@ npm install
 
 #### Build Photos
 
-![hash]()
+![hash](https://drive.google.com/drive/folders/1r967nBOv-MIP_fFrPZODD-REqrNV07h0?usp=sharing)
 
 
 
